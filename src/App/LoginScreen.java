@@ -26,7 +26,7 @@ public class LoginScreen {
     JFrame screen;
     public LoginScreen() {
         screen = new JFrame();
-        screen.setTitle("Tema POO");
+        screen.setTitle("BillMS");
         screen.setSize(500, 600);
         Font f = new Font("Tudor1", Font.BOLD, new JLabel().getFont().getSize() 
                 + 12);
@@ -69,13 +69,13 @@ public class LoginScreen {
                 jp2.getPreferredSize().width, 
                 jp2.getPreferredSize().height);
         
-        JButton jb = new JButton("Login");
+        JButton jb = new JButton("Log In");
         jb.setBounds(80, jp2.getY() + jp2.getSize().height + 30, 
                 jb.getPreferredSize().width,  jb.getPreferredSize().height);
         jb.addActionListener(new LoginListener());
         screen.add(jb);
         
-        JLabel jl3 = new JLabel("Hint: Orice combinatie merge");
+        JLabel jl3 = new JLabel("Hint: Anything Works, you can leave it empty");
         f = new Font("Tudor2", Font.PLAIN, 9);
         jl3.setFont(f);
         jl3.setBounds(75, 520, jl3.getPreferredSize().width, 

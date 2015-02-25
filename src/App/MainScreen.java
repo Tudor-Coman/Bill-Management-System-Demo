@@ -30,7 +30,7 @@ class MainScreen {
     
     private MainScreen() {
         JFrame mainScreen = new JFrame();
-        mainScreen.setTitle("Tema POO");
+        mainScreen.setTitle("BillMS");
         Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
         mainScreen.setSize(500, 600);
         mainScreen.setLocation(dim.width/2-250, dim.height/2-300);
@@ -42,8 +42,8 @@ class MainScreen {
         
         
         
-        tabbedPane.addTab("Produse", null);
-        tabbedPane.addTab("Statistici", null);
+        tabbedPane.addTab("Products", null);
+        tabbedPane.addTab("Statistics", null);
         
         
         tabbedPane.setEnabledAt(1, false);
@@ -63,8 +63,8 @@ class MainScreen {
         JPanel produseScreen = new ProduseScreen();
         JPanel statisticiScreen = new StatisticiScreen();
 
-        tabbedPane.addTab("Produse", produseScreen);
-        tabbedPane.addTab("Statistici", statisticiScreen);
+        tabbedPane.addTab("Products", produseScreen);
+        tabbedPane.addTab("Statistics", statisticiScreen);
     }
     
     

@@ -35,9 +35,9 @@ public class StartScreen extends JPanel{
     
         setLayout(null);
         
-        gButton = new JButton("Gestionare");
+        gButton = new JButton("Manage");
         
-        JLabel jl1 = new JLabel("Selectare fisiere: ");
+        JLabel jl1 = new JLabel("Select Files: ");
         
         JLabel jl2 = new JLabel("facturi.txt");
         JLabel jl3 = new JLabel("taxe.txt   ");

@@ -48,16 +48,16 @@ public class ProduseScreen extends JPanel{
         produse = new ArrayList<>(produse);
         headers = new ArrayList<>();
         
-        headers.add("Tara");
-        headers.add("Nume");
-        headers.add("Categorie");
-        headers.add("Pret");
+        headers.add("Country");
+        headers.add("Name");
+        headers.add("Category");
+        headers.add("Price");
         
         showProduse(null);
         
         produseTable = new JTable(dtm);
         JPopupMenu menu = new JPopupMenu();
-        JMenuItem item = new JMenuItem("Cauta");
+        JMenuItem item = new JMenuItem("Search");
         item.addActionListener(new FourthScreenListener());
         menu.add(item);
         produseTable.addMouseListener(new MouseAdapter() {
@@ -74,10 +74,10 @@ public class ProduseScreen extends JPanel{
             }
           });
         jsp = new JScrollPane(produseTable);
-        JButton adaugare = new JButton("Adauga Produs");
+        JButton adaugare = new JButton("Add Product");
         
-        JButton op1 = new JButton("Adauga");
-        JButton op2 = new JButton("Anulare");
+        JButton op1 = new JButton("Add");
+        JButton op2 = new JButton("Cancel");
         
         adaugare.addActionListener(new adaugareListener(op1, op2));
         add(jsp, BorderLayout.CENTER);
@@ -117,7 +117,7 @@ public class ProduseScreen extends JPanel{
             public void mouseClicked(MouseEvent e) {
                 if(e.getClickCount() > 1){
                     int row = produseTable.rowAtPoint(e.getPoint());
-                    JButton op1 = new JButton("Modifica");
+                    JButton op1 = new JButton("Modify");
                     JButton op2 = new JButton(((Integer)row).toString());
                     new adaugareListener(op1, op2).actionPerformed(null);
                 }
@@ -212,12 +212,12 @@ public class ProduseScreen extends JPanel{
             this.op1 = op1;
             this.op2 = op2;
             
-            if(op1.getText().compareTo("Adauga") == 0) {
+            if(op1.getText().compareTo("Add") == 0) {
                 op1.addActionListener(new SecondScreenListener());
                 op2.addActionListener(new SecondScreenListener());
             } else {
                 row = Integer.parseInt(op2.getText());
-                op2.setText("Sterge");
+                op2.setText("Delete");
                 preset = true;
                 op1.addActionListener(new ThirdScreenListener());
                 op2.addActionListener(new ThirdScreenListener());
@@ -255,7 +255,7 @@ public class ProduseScreen extends JPanel{
                     jtf1.setEditable(false);
             }
             jtf1.setHorizontalAlignment(JTextField.RIGHT);
-            JLabel jl1 = new JLabel("Denumire:"); 
+            JLabel jl1 = new JLabel("Name:    "); 
 
             JPanel jp2 = new JPanel();
             jtf2 = new JTextField(10);
@@ -265,7 +265,7 @@ public class ProduseScreen extends JPanel{
                     jtf2.setEditable(false);
             }
             jtf2.setHorizontalAlignment(JTextField.RIGHT);
-            JLabel jl2 = new JLabel("Categorie:");
+            JLabel jl2 = new JLabel("Category:");
 
             JPanel jp3 = new JPanel();
             jtf3 = new JTextField(10);
@@ -275,7 +275,7 @@ public class ProduseScreen extends JPanel{
                     jtf3.setEditable(false);
             }
             jtf3.setHorizontalAlignment(JTextField.RIGHT);
-            JLabel jl3 = new JLabel("Tara:"); 
+            JLabel jl3 = new JLabel("Country:"); 
             jl3.setPreferredSize(jl1.getPreferredSize());
 
             JPanel jp4 = new JPanel();
@@ -288,7 +288,7 @@ public class ProduseScreen extends JPanel{
             if(preset) {
                 jtf4.setValue(vechi.getPret());
             }
-            JLabel jl4 = new JLabel("Pret:");
+            JLabel jl4 = new JLabel("Price:   ");
             jl4.setPreferredSize(jl1.getPreferredSize());
             
             JPanel jp5 = new JPanel();
@@ -317,11 +317,11 @@ public class ProduseScreen extends JPanel{
         private class SecondScreenListener implements ActionListener {
 
             public void actionPerformed(ActionEvent e) {
-                if(e.getActionCommand().compareTo("Anulare") == 0){
+                if(e.getActionCommand().compareTo("Cancel") == 0){
                     secondScreen.setVisible(false);
                     secondScreen.dispose();
                 }
-                if(e.getActionCommand().compareTo("Adauga") == 0) {
+                if(e.getActionCommand().compareTo("Add") == 0) {
                     JButton source = (JButton)e.getSource();
                     
                     if(jtf1.getText().isEmpty() ||
@@ -330,7 +330,7 @@ public class ProduseScreen extends JPanel{
                             (Double)jtf4.getValue() == 0.0 ){
                         
                         JOptionPane.showMessageDialog(source.getParent(),
-                                        "Toate campurile trebuie completate", 
+                                        "All fields must be completed", 
                                         "Warning!", JOptionPane.PLAIN_MESSAGE);
                         return;
                     }
@@ -346,7 +346,7 @@ public class ProduseScreen extends JPanel{
                         if (i.equals(produsCurent)) {
                             
                             JOptionPane.showMessageDialog(source.getParent(),
-                                    "Produs existent", "Warning!",
+                                    "Product already exists", "Warning!",
                                     JOptionPane.WARNING_MESSAGE);
                             return;
                         }
@@ -366,11 +366,11 @@ public class ProduseScreen extends JPanel{
             public void actionPerformed(ActionEvent e) {
                 JButton source = (JButton)e.getSource();
                 boolean tryDelete = (Double)jtf4.getValue() == 0.0;
-                if(e.getActionCommand().compareTo("Sterge") == 0 || 
+                if(e.getActionCommand().compareTo("Delete") == 0 || 
                         tryDelete){
                     if( Gestiune.getInstance().checkOriginality(vechi)) {
                         JOptionPane.showMessageDialog(source.getParent(),
-                                    "Acest produs a fost comandat", 
+                                    "This product was already ordered", 
                                     "Warning!", JOptionPane.PLAIN_MESSAGE);
                         return;
                     }
@@ -382,7 +382,7 @@ public class ProduseScreen extends JPanel{
                         (Double)jtf4.getValue() == 0.0 ){
 
                     JOptionPane.showMessageDialog(source.getParent(),
-                                    "Toate campurile trebuie completate", 
+                                    "All fields must be completed", 
                                     "Warning!", JOptionPane.PLAIN_MESSAGE);
                     return;
                 }
@@ -394,7 +394,7 @@ public class ProduseScreen extends JPanel{
                         break;
                     }
                 }
-                if(e.getActionCommand().compareTo("Modifica") == 0 && !tryDelete) {
+                if(e.getActionCommand().compareTo("Modify") == 0 && !tryDelete) {
                     Produs produsCurent = new Produs();
                     produsCurent.setDenumire(jtf1.getText());
                     produsCurent.setCategorie(jtf2.getText());
@@ -432,19 +432,19 @@ public class ProduseScreen extends JPanel{
             jtf1 = new JTextField(10);
 
             jtf1.setHorizontalAlignment(JTextField.RIGHT);
-            JLabel jl1 = new JLabel("Denumire:"); 
+            JLabel jl1 = new JLabel("Name:    "); 
 
             JPanel jp2 = new JPanel();
             jtf2 = new JTextField(10);
 
             jtf2.setHorizontalAlignment(JTextField.RIGHT);
-            JLabel jl2 = new JLabel("Categorie:");
+            JLabel jl2 = new JLabel("Category:");
 
             JPanel jp3 = new JPanel();
             jtf3 = new JTextField(10);
                     
             jtf3.setHorizontalAlignment(JTextField.RIGHT);
-            JLabel jl3 = new JLabel("Tara:"); 
+            JLabel jl3 = new JLabel("Country:"); 
             jl3.setPreferredSize(jl1.getPreferredSize());
 
 
@@ -457,8 +457,8 @@ public class ProduseScreen extends JPanel{
             jp3.add(jl3);
             jp3.add(jtf3);
 
-            JButton cauta = new JButton("Cauta");
-            JButton anulare = new JButton("Anulare");
+            JButton cauta = new JButton("Search");
+            JButton anulare = new JButton("Cancel");
 
             cauta.addActionListener(new CautareListener());
             anulare.addActionListener(new CautareListener());

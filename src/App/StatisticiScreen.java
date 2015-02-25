@@ -31,20 +31,20 @@ class StatisticiScreen extends JPanel {
         this.setLayout(new BorderLayout());
         JComboBox jb = new JComboBox();
         jb.addItem(new MyComboBoxModel("magazin", null, null, 
-                "Top magazin vanzari"));
+                "Top store by sales"));
         
         tari = Gestiune.getInstance().getTari();
         for(Object i : tari)
             jb.addItem(new MyComboBoxModel("magazin", null, i.toString(),
-                "Top magazin vanzari in " + i.toString()));
+                "Top store by sales in " + i.toString()));
         
         categorii = Gestiune.getInstance().getCategorii();
         for(Object i : categorii)
             jb.addItem(new MyComboBoxModel("magazin", i.toString(), null,
-                "Top magazin vanzari " + i.toString()));
+                "Top store by sales " + i.toString()));
         
         jb.addItem(new MyComboBoxModel("factura", null, null, 
-                "Factura cea mai mare"));
+                "Largest Bill"));
         jb.addActionListener(new MyComboBoxListener());
         
         this.add(jb, BorderLayout.NORTH);
@@ -149,9 +149,9 @@ class StatisticiScreen extends JPanel {
                 90, titlul.getPreferredSize().width, titlul.getPreferredSize().height);
         
        if(arg3 != null) {
-           JLabel jl1 = new JLabel("Total fara taxe");
-           JLabel jl2 = new JLabel("Total cu taxe");
-           JLabel jl3 = new JLabel("Total cu taxe scutite");
+           JLabel jl1 = new JLabel("Total without tax");
+           JLabel jl2 = new JLabel("Total with tax");
+           JLabel jl3 = new JLabel("Total with tax exempt");
            
            JLabel jp1 = new JLabel(String.format("%.3f", arg1));
            JLabel jp2 = new JLabel(String.format("%.3f", arg2));
@@ -185,8 +185,8 @@ class StatisticiScreen extends JPanel {
            afis.setVisible(false);
            afis.setVisible(true);
        } else {
-           JLabel jl1 = new JLabel("Total fara taxe");
-           JLabel jl2 = new JLabel("Total cu taxe");
+           JLabel jl1 = new JLabel("Total without tax");
+           JLabel jl2 = new JLabel("Total with tax");
            
            JLabel jp1 = new JLabel(String.format("%.3f", arg1));
            JLabel jp2 = new JLabel(String.format("%.3f", arg2));
