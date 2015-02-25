@@ -1,0 +1,42 @@
+Magazin:MiniMarket:MegaImage1
+
+Factura1
+DenumireProdus Tara Cantitate
+Paine IT 2
+Paine RO 5
+Ghid_Turistic SP 6 
+Paine SP 4
+Conserva_Carne RO 10
+
+Factura2
+DenumireProdus Tara Cantitate
+Conserva_Carne IT 5
+Paine SP 4
+Paine RO 3
+Conserva_Carne RO 2
+Ghid_Turistic IT 4 
+
+Magazin:HyperMarket:Cora5
+
+Factura1
+DenumireProdus Tara Cantitate
+Conserva_Carne RO 2
+Ghid_Turistic RO 10
+Paine RO 6
+
+Magazin:MiniMarket:MegaImage2
+
+Factura1
+DenumireProdus Tara Cantitate
+Conserva_Carne IT 2
+Ghid_Turistic RO 10
+Paine SP 6
+
+
+Magazin:MediumMarket:Carrefour1
+
+Factura1
+DenumireProdus Tara Cantitate
+Conserva_Carne IT 2
+Ghid_Turistic RO 10
+Paine SP 6

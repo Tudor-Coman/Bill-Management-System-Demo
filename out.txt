@@ -1,0 +1,83 @@
+MiniMarket
+MegaImage2
+
+Total 78.4 83.888 75.4992
+
+Tara
+IT 10 10.7 9.63
+RO 60 64.2 57.78
+SP 8.4 8.988 8.0892
+
+Factura1
+
+Total 78.4 83.888
+
+Tara
+IT 10 10.7
+RO 60 64.2
+SP 8.4 8.988
+
+MegaImage1
+
+Total 190.4 204.244 204.244
+
+Tara
+IT 49.2 52.58 52.58
+RO 76 79.2 79.2
+SP 65.2 72.464 72.464
+
+Factura2
+
+Total 66.6 70.442
+
+Tara
+IT 45 47.75
+RO 16 16.7
+SP 5.6 5.992
+
+Factura1
+
+Total 123.8 133.802
+
+Tara
+IT 4.2 4.83
+RO 60 62.5
+SP 59.6 66.472
+
+MediumMarket
+Carrefour1
+
+Total 78.4 83.888 79.6936
+
+Tara
+IT 10 10.7 10.165
+RO 60 64.2 60.99
+SP 8.4 8.988 8.5386
+
+Factura1
+
+Total 78.4 83.888
+
+Tara
+IT 10 10.7
+RO 60 64.2
+SP 8.4 8.988
+
+HyperMarket
+Cora5
+
+Total 82 87.2 86.328
+
+Tara
+IT 0 
+RO 82 87.2 86.328
+SP 0 
+
+Factura1
+
+Total 82 87.2
+
+Tara
+IT 0
+RO 82 87.2
+SP 0

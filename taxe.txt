@@ -1,0 +1,4 @@
+Categorie\Tara RO IT SP
+Patiserie 5 15 7
+Carte 7 5 12
+Mancare 4 7 9
