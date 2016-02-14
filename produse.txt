@@ -1,4 +1,4 @@
 Produs Categorie RO IT SP
-Paine Patiserie 2 2.1 1.4
-Ghid_Turistic Carte 6 5 9
-Conserva_Carne Mancare 5 5 8
+Bread Pastry 2 2.1 1.4
+Tourist_Guide Book 6 5 9
+Meat_Can Food 5 5 8

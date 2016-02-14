@@ -1,4 +1,4 @@
 Categorie\Tara RO IT SP
-Patiserie 5 15 7
-Carte 7 5 12
-Mancare 4 7 9
+Pastry 5 15 7
+Book 7 5 12
+Food 4 7 9
